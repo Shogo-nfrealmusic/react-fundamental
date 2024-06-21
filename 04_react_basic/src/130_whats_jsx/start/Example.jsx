@@ -3,9 +3,9 @@ import React from "react";
 const Example = () => {
   const sample1 = <h1 className="greeting">Hello World</h1>;
 
-  // React.createElement("h1", {
-  //   className: "greeting"
-  // }, "Hello World");
+  React.createElement("h1", {
+    className: "greeting"
+  }, "Hello World");
 
   const sample2 = (
     <div>
