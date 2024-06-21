@@ -9,8 +9,6 @@ const Example = () => {
     return (
         <>
             <Child 
-                // POINT propsには全てのタイプの値を渡すことができます。
-                // {...o}
                 color="blue"
                 fn={hello}
                 bool
