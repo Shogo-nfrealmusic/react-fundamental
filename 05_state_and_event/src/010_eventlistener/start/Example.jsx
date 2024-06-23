@@ -6,6 +6,8 @@ const Example = () => {
   const clickHandler2 = () => {
     alert('What color is your Bugatti!');
   }
+  const hello = () => { return 'hello react'};
+  console.log(clickHandler());
   return (
     <>
       <button onClick={clickHandler}>click!</button>
