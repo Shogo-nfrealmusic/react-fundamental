@@ -23,22 +23,22 @@ const Example = () => {
     setFruits(newFruits);
     // forEachバージョン
     // let sumVal = 0;
-    // newFruits.forEach(fruit => {
-    //   if(fruit.checked) {
+    // newFruits.forEach((fruit) => {
+    //   if (fruit.checked) {
     //     sumVal = sumVal + fruit.value;
     //   }
     // });
 
     // filter + forEachバージョン
-    // let sumVal = 0;
-    // newFruits
-    //   .filter((fruit) => fruit.checked)
-    //   .forEach((fruit) => (sumVal = sumVal + fruit.value));
+    let sumVal = 0;
+    newFruits
+      .filter((fruit) => fruit.checked)
+      .forEach((fruit) => (sumVal = sumVal + fruit.value));
 
     // filter + reduceバージョン
-    let sumVal = newFruits
-      .filter((fruit) => fruit.checked)
-      .reduce((sumVal, fruit) => sumVal + fruit.value, 0);
+    // let sumVal = newFruits
+    //   .filter((fruit) => fruit.checked)
+    //   .reduce((sumVal, fruit) => sumVal + fruit.value, 0);
     setSum(sumVal);
   };
   return (
