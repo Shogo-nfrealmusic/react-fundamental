@@ -10,6 +10,8 @@ const Form = ({ createTodo }) => {
     };
 
     createTodo(newTodo);
+
+    setEnteredTodo("");
   };
   return (
     <div>
