@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   height: 60px;
   font-weight: bold;
   cursor: pointer;
+  color: yellow;
   background: ${({ isSelected }) => (isSelected ? "pink" : "")};
 `;
 const Example = () => {
