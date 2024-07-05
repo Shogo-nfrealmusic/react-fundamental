@@ -2,11 +2,14 @@ const Example = () => {
   const nums = [1, 2, 3, 4, 5];
   const sum = (arry) => {
     const nums = arry;
-    let sumValue = 0;
+    // let sumValue = 0;
     // for (let i = 0; i < nums.length; i++) {
     //   sumValue += nums[i];
     // }
-    nums.forEach((num) => (sumValue += num));
+    // nums.forEach((num) => (sumValue += num));
+    let sumValue = nums.reduce((accu, curr) => {
+      accu + curr;
+    }, 0);
     return sumValue;
   };
 
