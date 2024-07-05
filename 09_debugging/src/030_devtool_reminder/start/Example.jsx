@@ -1,7 +1,10 @@
+import Todo from "./components/Todo";
+
 const Example = () => {
   return (
     <>
-      <h3>React Developer Toolsを使ってみよう</h3>
+      <h2>Reminder</h2>
+      <Todo />
     </>
   );
 };
