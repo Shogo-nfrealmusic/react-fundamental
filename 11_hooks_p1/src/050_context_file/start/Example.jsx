@@ -1,35 +1,16 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./Example.css";
-
+import Main from "./components/Main";
+import Header from "./components/Header";
+export const ThemeContext = createContext();
 const Example = () => {
   const [theme, setTheme] = useState("light");
 
-  const changeTheme = (e) => setTheme(e.target.value);
-
-  const THEMES = ["light", "dark", "red"];
-
   return (
-    <>
-      <header className={`content-${theme}`}>
-        {THEMES.map((color) => {
-          return (
-            <label>
-              <input
-                type="radio"
-                key={color}
-                value={color}
-                checked={theme === color}
-                onChange={changeTheme}
-              />
-              {color}
-            </label>
-          );
-        })}
-      </header>
-      <main className={`content-${theme}`}>
-        <h1>テーマの切り替え</h1>
-      </main>
-    </>
+    <ThemeContext.Provider value={[theme, setTheme]}>
+      <Header />
+      <Main />
+    </ThemeContext.Provider>
   );
 };
 
