@@ -2,12 +2,21 @@ import { useReducer, useState } from "react";
 
 const Example = () => {
   const [state, setState] = useState(0);
-  const [rstate, dispatch] = useReducer((prev) => ++prev, 0);
+  const [rstate, dispatch] = useReducer((prev, action) => {
+    if (action === "+") {
+      return ++prev;
+    } else if (action === "-") {
+      return --prev;
+    }
+  }, 0);
   const countUp = () => {
     setState((prev) => ++prev);
   };
   const rcountUp = () => {
-    dispatch();
+    dispatch("+");
+  };
+  const rcountDown = () => {
+    dispatch("-");
   };
   return (
     <>
@@ -18,6 +27,7 @@ const Example = () => {
       <div>
         <h3>{rstate}</h3>
         <button onClick={rcountUp}>+</button>
+        <button onClick={rcountDown}>-</button>
       </div>
     </>
   );
