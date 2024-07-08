@@ -1,4 +1,7 @@
+import { useCalc, useDispatchCalc } from "../contexts/CalcContext";
 const Input = ({ name }) => {
+  const state = useCalc();
+  const dispatch = useDispatchCalc();
   const numChangeHandler = (e) => {
     dispatch({
       type: "change",

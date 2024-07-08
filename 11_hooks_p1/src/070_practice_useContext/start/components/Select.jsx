@@ -1,6 +1,11 @@
+import { useCalc, useDispatchCalc } from "../contexts/CalcContext";
+
 const CALC_OPTIONS = ["add", "minus", "divide", "multiply"];
 
 const Select = () => {
+  const state = useCalc();
+  const dispatch = useDispatchCalc();
+
   const calculate = (e) => {
     dispatch({ type: e.target.value });
   };
