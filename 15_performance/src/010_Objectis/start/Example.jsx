@@ -2,21 +2,25 @@ import { useState } from "react";
 
 const Example = () => {
   console.log("render");
-  const [countA, setCountA] = useState(0);
+  const [countA, setCountA] = useState({
+    val: 0,
+  });
   return (
     <>
       <div className="parent">
         <h3>Rendering?</h3>
         <button
           onClick={() => {
-            setCountA(1);
+            setCountA({
+              val: 0,
+            });
           }}
         >
           button
         </button>
       </div>
       <div>
-        <p>times:{countA}</p>
+        <p>times:{countA.val}</p>
       </div>
     </>
   );
