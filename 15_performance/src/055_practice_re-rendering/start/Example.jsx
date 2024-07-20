@@ -7,16 +7,12 @@ const Example = () => {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
-  const clickHandler = () => {
+  const clickHandler = useCallback(() => {
     setCountB(countB + 1);
-  };
-  
+  }, [countB]);
+
   return (
     <>
-      <h3>練習問題</h3>
-      <p>
-        useCallbackとReact.memoを使って不要な再レンダリングを防ぐコードに変更してください。
-      </p>
       <div className="parent">
         <div>
           <h3>親コンポーネント領域</h3>
@@ -34,7 +30,7 @@ const Example = () => {
         <div>
           <p>ボタンAクリック回数：{countA}</p>
         </div>
-        <Child countB={countB} onClick={clickHandler}/>
+        <Child countB={countB} onClick={clickHandler} />
       </div>
     </>
   );
