@@ -5,7 +5,9 @@ import ArticleList from "@/components/articleList";
 
 
 export default async function SSR() {
-  const articles = await fetch(ENDPOINT).then((res) => res.json());
+  const articles = await fetch(ENDPOINT, {
+    cache: "no-store"
+  }).then((res) => res.json());
   return (
     <>
       <div>SSR Page</div>
